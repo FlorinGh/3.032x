@@ -12,5 +12,13 @@ that the batter holds the end of the bat rigidly, so that it is loaded as a
 cantilever beam.
 '''
 
-import numpy as np
-pi = np.pi
+# Input data
+E = 10.0*1e9
+sb = 100.0*1e6
+L = 0.8
+r = 22.0*1e-3
+
+# The deflection formula
+delta = (sb*L**2)/(3*E*r)
+print round(delta*1e3, 5)
+    
