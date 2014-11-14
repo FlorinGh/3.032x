@@ -12,9 +12,9 @@ szR = Sy
 szT = Sy
 
 # von Mises
-szM = 2.0*Sy/np.sqrt((1.0-0.33)**2 + 2)
+szM = Sy/np.sqrt(1.0 + 0.33**2 - 0.33)
 print szM
 
 # What percent is the Von Mises result different from the Tresca result?
-p = 100.0*szM/szT
+p = 100.0*(szM-szT)/szM
 print p
