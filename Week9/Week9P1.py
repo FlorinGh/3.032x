@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Week 9, Homework
 
 import numpy as np
@@ -18,9 +19,4 @@ print szM
 # What percent is the Von Mises result different from the Tresca result?
 p = 100.0*(szM-szT)/szM
 print p
-
-# Problem 2
-
-
-
 
