@@ -17,15 +17,18 @@ b = 0.25*1e-9
 E = 50.0*1e9
 nu = 0.3
 rho = 1.0*1e12
+r0 = 4.0 * b
 
 # Determining shear modulus
-G = 0.5*E/(1+nu)
+G = 0.5*E/(1.0+nu)
 
-# Determining the line tension
-T = 0.5*G*b**2
+# Determining the distance between dislocations
+R = 1.0/np.sqrt(rho)
 
-# Determining dislocation core radius
-r = np.sqrt(1.0/rho)
+# Determining the strain energy per unit length of an edge dislocation
+UE = G * b**2 * np.log(R/r0) / (4.0*pi*(1.0-nu))
+print UE
+
 
 """
 What is the exact strain energy per unit length of an screw dislocation for a
@@ -34,3 +37,6 @@ a dislocation density ρ of 10^8cm−2, and a Poisson's ratio ν of 0.3?
 
 Uscrew (in J/m)
 """
+# Determining the strain energy per unit length of an screw dislocation
+US = G * b**2 * np.log(R/r0) / (4.0*pi)
+print US

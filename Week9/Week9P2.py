@@ -21,7 +21,7 @@ Syz = 0.0
 Szx = 0.0
 
 # Computing the von Mises equivalent stress using the components of stress
-Seq1 = np.sqrt(0.5*((Sx-Sy)**2 + (Sy-Sz)**2 + (Sz-Sx)**2) + 3*Sxy**2 + 3*Syz**2 + 3*Szx**2)
+Seq1 = np.sqrt(0.5*((Sx-Sy)**2+(Sy-Sz)**2+(Sz-Sx)**2)+3*Sxy**2+3*Syz**2 +3*Szx**2)
 print 'Seq1 is ' + str(round(Seq1,4))
 
 # Computing the equivalent stress using principal stress components

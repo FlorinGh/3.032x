@@ -15,11 +15,14 @@ dislocations to be pinned at the obstacles and bow out around them?
 import numpy as np
 pi = np.pi
 
-b = 0.25*1e-9
-G = 64.0*1e9
-gammaCarb = 2.0
+b1 = 0.25*1e-9
+G1 = 64.0*1e9
 
-alpha = 0.5
+gamma1 = 0.5*G1*b1
+print gamma1
 
-UeL = alpha*G*b**2
-print UeL
+b2 = 0.286*1e-9
+G2 = 26.0*1e9
+
+gamma2 = 0.5*G2*b2
+print gamma2
