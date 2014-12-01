@@ -13,25 +13,22 @@ import numpy as np
 pi = np.pi
 
 # Input data
-S1 = 60.0*1e6
-eps1 = 1.0*1e-5
-T1 = 977.0
-eps2 = 2.5*1e-3
-T2 = 1089.0
-S3 = 45.0*1e6
-T3 = 1200.0
+Diameter = 200.0*1e-3
+Length = 700.0*1e-3
+Stress= 40.0*1e6
+Temperature = 538.0 + 273.15
+epsSRate = 2.0*1e-6 / 3600.0
+time = 5000*3600.0
+deltaCreep = 7.2*1e-3
 
 # Other necesary information
 R = 8.314
-n = 6
-ratio = eps1/eps2
 
-# Determining the activation energy
-coef = 1.0/(R*T2) - 1.0/(R*T1)
-Q = np.log(ratio)/coef
-print round(Q/1000.0,4), 'kJ/mol'
+# Determining the steady state creep elongation
+epsS = epsSRate * time
+elongationS = Length * epsS
+print round(elongationS*1000.0,4), 'mm'
 
-# Determining eps3
-r = ((S3/S1)**n)*np.exp(Q*(1/(R*T1) - 1/(R*T3)))
-eps3 = r*eps1
-print round(eps3, 4), 's^-1'
+# Determining the primary creep elongation
+elongationP = deltaCreep - elongationS
+print round(elongationP*1000.0,4), 'mm'
