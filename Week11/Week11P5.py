@@ -38,7 +38,7 @@ R = 8.314
 
 # Creating a function for the Larson-Miller parameter
 def LMparam(Temp, hours):
-    C = 17*np.log10(hours)
+    C = 17.0
     return Temp*(np.log10(hours) + C)
 
 # Calculate the operating stress for this pipe
@@ -50,8 +50,9 @@ Sh = p*r/t
 # Given that LMparam is about 17000, calculate the stress-rupture time in years
 # Creating a function to determine time in years for a given LM param
 def invLM(Temp,LMparam):
-    exp = LMparam/(18.0*Temp)
+    C = 17.0
+    exp = (LMparam/Temp)- C
     hours = 10.0**exp
     years = hours/(365.0*24.0)
     return years
-print invLM(T,18000.0)
+print invLM(T,17013.139)
