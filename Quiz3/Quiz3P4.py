@@ -4,10 +4,10 @@
 
 """
 The principal stresses acting on an aluminum component,
-with a yield stress of 240MPa, are
-σ=⎡⎣150    0  0
-      0 −100  0
-      0    0  125
+with a yield stress of 100 MPa, are
+σ=⎡⎣ 50    0  0
+      0  -50  0
+      0    0  40
 
 """
 
@@ -16,10 +16,10 @@ import numpy as np
 pi = np.pi
 
 # Input data
-sy = 240.0
-s1 = 150.0
-s2 = 125.0
-s3 = -100.0
+sy = 100.0
+s1 = 50.0
+s2 = 40.0
+s3 = -50.0
 
 """
 Calculate the difference between the maximum and minimum principal stresses.
